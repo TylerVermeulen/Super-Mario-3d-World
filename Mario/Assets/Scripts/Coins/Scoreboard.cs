@@ -26,6 +26,6 @@ public class Scoreboard : MonoBehaviour
     private void UpdateScore()
     {
         score += points;
-        textField.text = "X" + score;
+        textField.text = "x" + score;
     }
 }
