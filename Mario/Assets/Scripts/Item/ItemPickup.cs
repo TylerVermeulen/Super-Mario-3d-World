@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChangeImage : MonoBehaviour
+public class ItemPickup : MonoBehaviour
 {
-    
-    [SerializeField]
-    private Sprite Ster;
+    public ItemStorage ItemStorage;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +17,13 @@ public class ChangeImage : MonoBehaviour
     {
         
     }
-
-    public void Change()
+    private void OnTriggerEnter(Collider other)
     {
-        GetComponent<Image>().sprite = Ster;
-        
+        if (other.tag == "Player")
+        {
+            Destroy(gameObject);
+            ItemStorage.IteminStorage();
+        }
+        Debug.Log("Item");
     }
 }

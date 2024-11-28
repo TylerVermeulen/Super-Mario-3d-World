@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChangeImage : MonoBehaviour
+public class ItemStorage : MonoBehaviour
 {
     
     [SerializeField]
-    private Sprite Ster;
+    private Sprite Item;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +19,9 @@ public class ChangeImage : MonoBehaviour
     {
         
     }
-
-    public void Change()
+    public void IteminStorage()
     {
-        GetComponent<Image>().sprite = Ster;
-        
+        GetComponent<Image>().sprite = Item;
+
     }
 }
