@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.57254905}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac10e14ece3e4744823d3508212cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ster: {fileID: 21300000, guid: 3e8fed63b2c2ba643a80355146867adb, type: 3}
+  Ster: {fileID: 21300000, guid: 94d18207e2239664dbdd6f579283ef5a, type: 3}
 --- !u!1 &844503794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +1832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.34509805}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1868,7 +1868,6 @@ GameObject:
   - component: {fileID: 2030895946}
   - component: {fileID: 2030895948}
   - component: {fileID: 2030895947}
-  - component: {fileID: 2030895949}
   m_Layer: 5
   m_Name: Star1
   m_TagString: Untagged
@@ -1908,14 +1907,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 94d18207e2239664dbdd6f579283ef5a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1933,19 +1932,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030895945}
   m_CullTransparentMesh: 1
---- !u!114 &2030895949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030895945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac10e14ece3e4744823d3508212cb64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ster: {fileID: 21300000, guid: 3e8fed63b2c2ba643a80355146867adb, type: 3}
 --- !u!1 &2088656362
 GameObject:
   m_ObjectHideFlags: 0
