@@ -22,8 +22,9 @@ public class Movement : MonoBehaviour
         float horizontalMove = Input.GetAxis("Horizontal");
         float verticalMove = Input.GetAxis("Vertical");
 
-        Vector3 move = new Vector3(horizontalMove, 0 ,verticalMove);
-        transform.Translate(move * playerSpeed * Time.deltaTime);
+        Vector3 move = new Vector3(horizontalMove, 0,verticalMove);
+        move *= Time.deltaTime * playerSpeed;
+        transform.position += new Vector3(move.x,0 ,move.z);
 
         if (Input.GetKeyDown("space"))
         {
