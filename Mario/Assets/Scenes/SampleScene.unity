@@ -208,13 +208,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.14932097, y: -0, z: -0, w: 0.9887888}
+  m_LocalPosition: {x: 0, y: 5.47, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.175, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,9 +572,10 @@ GameObject:
   - component: {fileID: 1298433665}
   - component: {fileID: 1298433664}
   - component: {fileID: 1298433663}
-  - component: {fileID: 1298433668}
+  - component: {fileID: 1298433670}
   - component: {fileID: 1298433662}
   - component: {fileID: 1298433667}
+  - component: {fileID: 1298433669}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player
@@ -723,7 +724,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1298433668
+--- !u!114 &1298433669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -732,10 +733,120 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298433661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9e1bf8b9884bd4296659ab8552bb0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 10
+  m_Actions: {fileID: -944628639613478452, guid: 2007b124e7993af4f9fcfa370ff84b2a,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1298433670}
+        m_TargetAssemblyTypeName: Test, Assembly-CSharp
+        m_MethodName: MoveInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 935dd803-e5b3-41ed-a864-c1ae3e255cdc
+    m_ActionName: Movement/movement
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1298433670}
+        m_TargetAssemblyTypeName: Test, Assembly-CSharp
+        m_MethodName: JumpInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 060aa298-dfcb-4905-a6f2-da540266997c
+    m_ActionName: Movement/Jump
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1298433670}
+        m_TargetAssemblyTypeName: Test, Assembly-CSharp
+        m_MethodName: AttackInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 584c3416-d4db-4fb9-927e-ab93bf47ab61
+    m_ActionName: Movement/Attack
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1298433670}
+        m_TargetAssemblyTypeName: Test, Assembly-CSharp
+        m_MethodName: GroundPoundInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ab61146c-fe08-4cd7-9718-6b7f7b1788d2
+    m_ActionName: Movement/Groundpound
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1298433670}
+        m_TargetAssemblyTypeName: Test, Assembly-CSharp
+        m_MethodName: MoveInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ffcd640d-7cf6-4bb8-8d5d-4411b6163a5c
+    m_ActionName: Test/Move
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Test
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1298433670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298433661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e278bbe10d5c2ab4eb05aa74fde2f3d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4831171095420499294
 PrefabInstance:
   m_ObjectHideFlags: 0
