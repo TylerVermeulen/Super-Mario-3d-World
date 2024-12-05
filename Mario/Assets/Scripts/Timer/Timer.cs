@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Timer : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Timer : MonoBehaviour
     private float time = 439f;
     private bool timerRunning = false;
     [SerializeField] private TMP_Text timertext;
+    
+    private decimal max = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +35,8 @@ public class Timer : MonoBehaviour
                 timerRunning = false;
             }
         }
-        // maxLength
-        timertext.text = time.ToString();
-        Debug.Log(time);
+        timertext.text = Mathf.Floor(time).ToString();
+        
+        //Debug.Log(time);
     }
 }
