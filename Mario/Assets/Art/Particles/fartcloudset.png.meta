@@ -95,18 +95,86 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: fartcloudset_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 502
+        height: 493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4616b5b060bd282488f282dc59ee192e
+      internalID: 599301743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fartcloudset_1
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 37
+        width: 501
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc2f4c57347b5d438751e77ed0f67df
+      internalID: 145280217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fartcloudset_3
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1
+        width: 500
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae54b79fdfb35a4e9e6d1f89a55ae37
+      internalID: -559255931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fartcloudset_0: 599301743
+      fartcloudset_1: 145280217
+      fartcloudset_2: -1371525759
+      fartcloudset_3: -559255931
+      fartcloudset_4: -8585915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
