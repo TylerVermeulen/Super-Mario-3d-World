@@ -4,23 +4,34 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private CharacterController characterController;
-    private Vector3 playerVelocity;
+
+    private Rigidbody rb;
 
     [SerializeField] private float playerSpeed = 10f;
-    //[SerializeField] private float jump = 5f;
-    //[SerializeField] private float gravity = -9;
+    [SerializeField] private float jump = 500.0f;
+
 
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        float horizontalMove = Input.GetAxis("Horizontal");
+        float verticalMove = Input.GetAxis("Vertical");
 
-        characterController.Move(move * Time.deltaTime * playerSpeed);
+        Vector3 move = new Vector3(horizontalMove, 0,verticalMove);
+        move *= Time.deltaTime * playerSpeed;
+        transform.position += new Vector3(move.x,0 ,move.z);
+
+        if (Input.GetKeyDown("space"))
+        {
+            rb.AddForce(transform.up * jump);
+            Debug.Log("Jump");
+        }
     }
+
+  
 }
