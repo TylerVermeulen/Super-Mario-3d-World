@@ -19,10 +19,8 @@ public class Test : MonoBehaviour
     }
 
     public void MoveInput(InputAction.CallbackContext ctx) {
-
-        Debug.Log("yo");
-        Debug.Log(ctx.ReadValue<Vector2>().x);
-        Debug.Log(ctx.ReadValue<Vector2>().y);
+        //Debug.Log(ctx.ReadValue<Vector2>().x);
+        //Debug.Log(ctx.ReadValue<Vector2>().y);
     }
     public void JumpInput(InputAction.CallbackContext ctx)
     {

@@ -7,8 +7,8 @@ public class Movement : MonoBehaviour
 
     private Rigidbody rb;
 
-    [SerializeField] private float playerSpeed = 10f;
-    [SerializeField] private float jump = 500.0f;
+    [SerializeField] private float playerSpeed;
+    [SerializeField] private float jump;
 
 
     void Start()
