@@ -6,12 +6,19 @@ using UnityEngine.InputSystem;
 public class MovementT : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float walkSpeed;
     [SerializeField] private float speed;
+    [SerializeField] private float sprintSpeed;
 
     private Vector2 moveinput;
-    private Vector3 velocity;    
+    private Vector3 velocity;
     private CharacterController controller;
-    
+    public Vector3 Velocity
+    {
+        get { return velocity; }
+        set { velocity = value; }
+    }
+
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -34,15 +41,28 @@ public class MovementT : MonoBehaviour
     }
     public void MoveCharacter()
     {
+        float holdY = Velocity.y;
         float moveSpeed = speed * moveinput.magnitude;
         velocity = transform.forward * moveSpeed * Time.deltaTime;
-        velocity.y = Physics.gravity.y;
-        controller.Move(velocity * Time.deltaTime);
+        //velocity.y = Physics.gravity.y;
+        controller.Move(Velocity * Time.deltaTime);
+        velocity.y = holdY;
     }
 
     public void MoveInput(InputAction.CallbackContext ctx)
     {
         moveinput.x = ctx.ReadValue<Vector2>().x;
         moveinput.y = ctx.ReadValue<Vector2>().y;
+    }
+    public void SprintInput(InputAction.CallbackContext ctx)
+    {
+        if (ctx.action.phase == InputActionPhase.Performed)
+        {
+            speed = sprintSpeed;
+        }
+        if (ctx.action.phase == InputActionPhase.Canceled)
+        {
+            speed = walkSpeed;
+        }
     }
 }
