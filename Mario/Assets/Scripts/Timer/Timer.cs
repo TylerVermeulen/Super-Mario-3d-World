@@ -13,13 +13,11 @@ public class Timer : MonoBehaviour
     [SerializeField] private TMP_Text timertext;
     
     private decimal max = 3;
-    // Start is called before the first frame update
     void Start()
     {
         timerRunning = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timerRunning == true)
