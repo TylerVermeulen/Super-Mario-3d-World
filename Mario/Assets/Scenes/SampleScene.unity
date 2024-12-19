@@ -724,16 +724,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capsule
       objectReference: {fileID: 0}
-    - target: {fileID: 5852318313152727861, guid: 1b2a310866215e64f9a8b5a986368d77,
-        type: 3}
-      propertyPath: speed
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 5852318313152727861, guid: 1b2a310866215e64f9a8b5a986368d77,
-        type: 3}
-      propertyPath: rotationspeed
-      value: 690
-      objectReference: {fileID: 0}
     - target: {fileID: 7282259664636248120, guid: 1b2a310866215e64f9a8b5a986368d77,
         type: 3}
       propertyPath: m_LocalPosition.x
