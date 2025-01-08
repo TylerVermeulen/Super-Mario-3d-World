@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,29 +8,32 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     [SerializeField] private TMP_Text score;
-    [SerializeField] private GameObject coin;//1
-    [SerializeField] private GameObject star;//4000
-    [SerializeField] private GameObject vlag;//2000
-    [SerializeField] private GameObject item;//1000
 
-    private int coinScore = 1;
-    private int starScore = 4000;
-    private int vlagScore = 2000;
-    private int itemScore = 1000;
+    //private int vlagScore = 2000;
+    
+    private int startScore = 013600;//0 6 getallen
+    private static int currentScore;
+   
+    public static int updateScore
 
-    private int startScore;//0 6 getallen
-    private int startPositionScore = 13600;
+    {
+        get { return currentScore; }
+        set { currentScore = value; }
+    }
 
     void Start()
     {
-        startScore = 0;
-        HandleScore();
+        score.text = startScore.ToString();
+        currentScore = startScore;
     }
 
-    private void HandleScore() 
+    public void HandleScore() 
     {
-        score.text = startScore.ToString();
-        //oncollision roept HandleScore(); aan
+        score.text = currentScore.ToString() ;
+
+        Debug.Log("019000");
     }
+
+    //Eindigen op 019000
     
 }
