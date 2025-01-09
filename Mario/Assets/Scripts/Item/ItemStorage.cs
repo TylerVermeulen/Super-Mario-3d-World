@@ -8,12 +8,10 @@ public class ItemStorage : MonoBehaviour
     [SerializeField]
     private Sprite Item;
 
-    public float a;
-    public Color color = Color.white;
     // Start is called before the first frame update
     void Start()
     {
-        color.a = 0.42f;
+
     }
 
     // Update is called once per frame

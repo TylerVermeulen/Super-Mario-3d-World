@@ -11,9 +11,12 @@ public class ItemPickup : MonoBehaviour
     private int itemScore = 1000;
     private Score score = null;
 
+    
+
     void Start()
     {
         score = FindAnyObjectByType<Score>();
+        
     }
 
     private void OnTriggerEnter(Collider other)
