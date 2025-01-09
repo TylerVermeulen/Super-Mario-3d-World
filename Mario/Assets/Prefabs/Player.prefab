@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 5406496050461945755}
   - component: {fileID: 5418542309784088764}
   - component: {fileID: 6547664397327641546}
+  - component: {fileID: 7080196487744641441}
   - component: {fileID: 5852318313152727861}
   - component: {fileID: 2828595062685152558}
   - component: {fileID: 522483944141526176}
@@ -234,6 +235,21 @@ MonoBehaviour:
   jumpForce: 3.2
   maxForce: 3
   buttonTime: 0.27
+--- !u!114 &7080196487744641441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4478382700227940615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187241f857e3e724b8f3750a62d3f783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 522483944141526176}
+  groundpoundSpeed: 17
+  normalSpeed: 2
 --- !u!114 &5852318313152727861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21226f23baca7c4e9ed68992ca8bc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 720
+  rotationSpeed: 1420
   walkSpeed: 300
   speed: 300
   sprintSpeed: 360
@@ -326,9 +342,9 @@ MonoBehaviour:
     m_ActionName: Movement/Attack
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5852318313152727861}
-        m_TargetAssemblyTypeName: Test, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 7080196487744641441}
+        m_TargetAssemblyTypeName: GroundPound, Assembly-CSharp
+        m_MethodName: GroundPoundInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -342,9 +358,9 @@ MonoBehaviour:
     m_ActionName: Movement/Groundpound
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5852318313152727861}
-        m_TargetAssemblyTypeName: MovementT, Assembly-CSharp
-        m_MethodName: SprintInput
+      - m_Target: {fileID: 7080196487744641441}
+        m_TargetAssemblyTypeName: GroundPound, Assembly-CSharp
+        m_MethodName: GroundPoundInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
