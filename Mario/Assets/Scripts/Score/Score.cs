@@ -9,9 +9,7 @@ public class Score : MonoBehaviour
 {
     [SerializeField] private TMP_Text score;
 
-    //private int vlagScore = 2000;
-    
-    private int startScore = 013600;//0 6 getallen
+    private int startScore = 013600;
     private static int currentScore;
    
     public static int updateScore
@@ -30,10 +28,7 @@ public class Score : MonoBehaviour
     public void HandleScore() 
     {
         score.text = currentScore.ToString() ;
-
-        Debug.Log("019000");
     }
 
-    //Eindigen op 019000
     
 }

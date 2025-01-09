@@ -11,17 +11,11 @@ public class ItemPickup : MonoBehaviour
     private int itemScore = 1000;
     private Score score = null;
 
-    // Start is called before the first frame update
     void Start()
     {
         score = FindAnyObjectByType<Score>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -31,6 +25,5 @@ public class ItemPickup : MonoBehaviour
             Score.updateScore += itemScore;
             score.HandleScore();
         }
-        Debug.Log("Item");
     }
 }

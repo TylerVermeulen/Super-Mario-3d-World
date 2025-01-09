@@ -6,8 +6,8 @@ public class TouchFlag : MonoBehaviour
 {
     private int vlagscore = 2000;
     private Score score = null;
+    private bool hasRun = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         score = FindAnyObjectByType<Score>();
@@ -15,11 +15,17 @@ public class TouchFlag : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            //animatie aanroepen vlag naar beneden
-            Score.updateScore += vlagscore;
-            score.HandleScore();
-        }
+            if (other.tag == "Player")
+            {
+                if (hasRun == false)
+                {
+                    //animatie aanroepen vlag naar beneden/ vlag veranderen
+                    Score.updateScore += vlagscore;
+                    score.HandleScore();
+                    hasRun = true;
+                }
+            }
+        
+        
     }
 }

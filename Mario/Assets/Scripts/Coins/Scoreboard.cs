@@ -11,16 +11,9 @@ public class Scoreboard : MonoBehaviour
     [SerializeField]
     private TMP_Text textField;
 
-    // Start is called before the first frame update
     void Start()
     {
         Pickup.OnPickup += UpdateScore;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void UpdateScore()
