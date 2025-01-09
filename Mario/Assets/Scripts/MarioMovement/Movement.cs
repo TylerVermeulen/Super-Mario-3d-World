@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MovementT : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float walkSpeed;
@@ -13,12 +13,19 @@ public class MovementT : MonoBehaviour
     private Vector2 moveinput;
     private Vector3 velocity;
     private CharacterController controller;
-    public Vector3 Velocity
+
+
+    /*public Vector3 Velocity
     {
         get { return velocity; }
         set { velocity = value; }
     }
-
+    
+    public float VelY {
+        get { return velocity.y; }
+        set { velocity.y = value; }
+    }
+    */
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -41,12 +48,16 @@ public class MovementT : MonoBehaviour
     }
     public void MoveCharacter()
     {
-        float holdY = Velocity.y;
+        //float holdY = Velocity.y;
         float moveSpeed = speed * moveinput.magnitude;
         velocity = transform.forward * moveSpeed * Time.deltaTime;
+
+       // Debug.Log("vel" + velocity);
         //velocity.y = Physics.gravity.y;
-        controller.Move(Velocity * Time.deltaTime);
-        velocity.y = holdY;
+        controller.Move(velocity * Time.deltaTime);
+       // velocity.y = holdY;
+
+       
     }
 
     public void MoveInput(InputAction.CallbackContext ctx)
