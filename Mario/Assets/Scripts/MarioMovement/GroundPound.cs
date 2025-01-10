@@ -11,6 +11,7 @@ public class GroundPound : MonoBehaviour
     private Vector3 velocity;
     [SerializeField] private float groundpoundSpeed;
     [SerializeField] private float normalSpeed;
+
     // Start is called before the first frame update
     void Start()
     {

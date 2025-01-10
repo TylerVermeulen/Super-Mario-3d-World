@@ -6,12 +6,26 @@ using UnityEngine.InputSystem;
 
 public class Test : MonoBehaviour
 {
+    private enum Colors
+    {
+        Black,
+        White,
+        Blue,
+    }
+    private Colors currentrace;
     // Start is called before the first frame update
     void Start()
     {
-        
+        colorchecker(Colors.White);
     }
-
+    void colorchecker(Colors color)
+    {
+        currentrace = color;
+        if (currentrace == Colors.White)
+        {
+            Debug.Log("you are white");
+        }
+    }
     // Update is called once per frame
     void Update()
     {
