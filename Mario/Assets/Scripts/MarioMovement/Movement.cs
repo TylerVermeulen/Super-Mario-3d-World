@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
     }
-    void Update()
+    void FixedUpdate()
     {
         RotateCharacter();
         MoveCharacter();
