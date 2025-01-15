@@ -1,37 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float speed;
+    [SerializeField] private float sprintSpeed;
 
-    private Rigidbody rb;
+    private Vector2 moveinput;
+    private Vector3 velocity;
+    private CharacterController controller;
 
-    [SerializeField] private float playerSpeed;
-    [SerializeField] private float jump;
 
-
-    void Start()
+    /*public Vector3 Velocity
     {
-        rb = GetComponent<Rigidbody>(); 
+        get { return velocity; }
+        set { velocity = value; }
     }
-
-    // Update is called once per frame
+    
+    public float VelY {
+        get { return velocity.y; }
+        set { velocity.y = value; }
+    }
+    */
+    void Awake()
+    {
+        controller = GetComponent<CharacterController>();
+    }
     void Update()
     {
-        float horizontalMove = Input.GetAxis("Horizontal");
-        float verticalMove = Input.GetAxis("Vertical");
-
-        Vector3 move = new Vector3(horizontalMove, 0,verticalMove);
-        move *= Time.deltaTime * playerSpeed;
-        transform.position += new Vector3(move.x,0 ,move.z);
-
-        if (Input.GetKeyDown("space"))
+        RotateCharacter();
+        MoveCharacter();
+    }
+    public void RotateCharacter()
+    {
+        if (moveinput != Vector2.zero)
         {
-            rb.AddForce(transform.up * jump);
-            Debug.Log("Jump");
+            Vector3 moveDirection = new Vector3(moveinput.x, 0, moveinput.y);
+
+            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
     }
+    public void MoveCharacter()
+    {
+        //float holdY = Velocity.y;
+        float moveSpeed = speed * moveinput.magnitude;
+        velocity = transform.forward * moveSpeed * Time.deltaTime;
 
-  
+       // Debug.Log("vel" + velocity);
+        //velocity.y = Physics.gravity.y;
+        controller.Move(velocity * Time.deltaTime);
+       // velocity.y = holdY;
+
+       
+    }
+
+    public void MoveInput(InputAction.CallbackContext ctx)
+    {
+        moveinput.x = ctx.ReadValue<Vector2>().x;
+        moveinput.y = ctx.ReadValue<Vector2>().y;
+    }
+    public void SprintInput(InputAction.CallbackContext ctx)
+    {
+        if (ctx.action.phase == InputActionPhase.Performed)
+        {
+            speed = sprintSpeed;
+        }
+        if (ctx.action.phase == InputActionPhase.Canceled)
+        {
+            speed = walkSpeed;
+        }
+    }
 }

@@ -117,6 +117,8 @@ GameObject:
   - component: {fileID: 8479480603716584053}
   - component: {fileID: 5406496050461945755}
   - component: {fileID: 5418542309784088764}
+  - component: {fileID: 6547664397327641546}
+  - component: {fileID: 7080196487744641441}
   - component: {fileID: 5852318313152727861}
   - component: {fileID: 2828595062685152558}
   - component: {fileID: 522483944141526176}
@@ -217,6 +219,37 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6547664397327641546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4478382700227940615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed78ea4485dc1684084be0d46343d80c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallingSpeed: 2
+  jumpForce: 3.2
+  maxForce: 3
+  buttonTime: 0.27
+--- !u!114 &7080196487744641441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4478382700227940615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187241f857e3e724b8f3750a62d3f783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 522483944141526176}
+  groundpoundSpeed: 17
+  normalSpeed: 2
 --- !u!114 &5852318313152727861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,8 +262,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21226f23baca7c4e9ed68992ca8bc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0
-  speed: 250
+  rotationSpeed: 1420
+  walkSpeed: 300
+  speed: 300
+  sprintSpeed: 360
 --- !u!114 &2828595062685152558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,9 +310,9 @@ MonoBehaviour:
     m_ActionName: Movement/movement
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Test, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 6547664397327641546}
+        m_TargetAssemblyTypeName: Jump, Assembly-CSharp
+        m_MethodName: JumpInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -307,9 +342,9 @@ MonoBehaviour:
     m_ActionName: Movement/Attack
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Test, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 7080196487744641441}
+        m_TargetAssemblyTypeName: GroundPound, Assembly-CSharp
+        m_MethodName: GroundPoundInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -321,6 +356,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ab61146c-fe08-4cd7-9718-6b7f7b1788d2
     m_ActionName: Movement/Groundpound
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7080196487744641441}
+        m_TargetAssemblyTypeName: GroundPound, Assembly-CSharp
+        m_MethodName: GroundPoundInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3d27ed56-de6e-4241-a56d-7593e7fcedb8
+    m_ActionName: Movement/Sprinting[/XInputControllerWindows/buttonWest]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
@@ -349,8 +400,8 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_SkinWidth: 0.05
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2739165350135276447
 PrefabInstance:
@@ -439,6 +490,66 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 6.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 0.98739624
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 0.46400356
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.20800018
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inSlope
+      value: 0.6429852
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -2.4176633
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0.6429852
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0.14996837
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -2.4176633
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outWeight
+      value: 0.14767632
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029104646471242838, guid: 8fd41e029e20ef246b147860bc0c831b,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outWeight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8864426580397429064, guid: 8fd41e029e20ef246b147860bc0c831b,
         type: 3}
