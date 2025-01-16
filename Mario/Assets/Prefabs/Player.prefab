@@ -138,15 +138,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4478382700227940615}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 1.58, y: 1, z: -0.87}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.75, y: 4.75, z: 4.75}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1330978174880497890}
   - {fileID: 741679845125373993}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &8479480603716584053
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5d87c8ab5cedeea4a81672949a1c72ae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -275,9 +275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21226f23baca7c4e9ed68992ca8bc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1420
-  walkSpeed: 300
-  speed: 300
+  rotationSpeed: 222.9
+  walkSpeed: 550.6
+  speed: 2009.9
   sprintSpeed: 360
 --- !u!114 &2828595062685152558
 MonoBehaviour:
