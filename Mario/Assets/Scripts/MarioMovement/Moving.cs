@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Movement : MonoBehaviour
+public class Moving : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float walkSpeed;
@@ -54,7 +54,7 @@ public class Movement : MonoBehaviour
 
        // Debug.Log("vel" + velocity);
         //velocity.y = Physics.gravity.y;
-        controller.Move(velocity * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime); 
        // velocity.y = holdY;
 
        
@@ -70,6 +70,7 @@ public class Movement : MonoBehaviour
         if (ctx.action.phase == InputActionPhase.Performed)
         {
             speed = sprintSpeed;
+
         }
         if (ctx.action.phase == InputActionPhase.Canceled)
         {
