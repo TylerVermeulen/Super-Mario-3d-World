@@ -5,22 +5,14 @@ using UnityEngine.InputSystem;
 
 public class AnimationsControls : MonoBehaviour
 {
-    private Vector2 moveinput;
 
-
-    [SerializeField] private float walkSpeed;
-    [SerializeField] private float speed;
-    [SerializeField] private float sprintSpeed;
-
-    Animator animator;
-    private CharacterController controller;
-
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        controller = GetComponent<CharacterController>();
+
     }
 
     // Update is called once per frame
@@ -36,8 +28,8 @@ public class AnimationsControls : MonoBehaviour
             animator.SetTrigger("Walking");
             Debug.Log("Walk Animation");
         }
-        moveinput.x = ctx.ReadValue<Vector2>().x;
-        moveinput.y = ctx.ReadValue<Vector2>().y;
+        //moveinput.x = ctx.ReadValue<Vector2>().x;
+        //moveinput.y = ctx.ReadValue<Vector2>().y;
 
         if (ctx.action.phase == InputActionPhase.Canceled)
         {
@@ -46,18 +38,19 @@ public class AnimationsControls : MonoBehaviour
         }
     }
 
-    /*public void JumpInput(InputAction.CallbackContext ctx)
+    public void JumpInput(InputAction.CallbackContext ctx)
     {
         if (ctx.action.phase == InputActionPhase.Started)
         {
             animator.SetTrigger("Jumping");
+            Debug.Log("jump big boi");
         }
         if (ctx.action.phase == InputActionPhase.Canceled)
         {
             animator.ResetTrigger("Jumping");
             animator.SetTrigger("Idle");
         }
-    }*/
+    }
 
 
     /*public void SprintInput(InputAction.CallbackContext ctx)
