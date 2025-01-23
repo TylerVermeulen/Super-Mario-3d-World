@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementT : MonoBehaviour
+public class DepricatedMovement: MonoBehaviour
 {
     private Rigidbody rb;
 
