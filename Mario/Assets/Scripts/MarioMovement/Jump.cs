@@ -26,7 +26,7 @@ public class Jump : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
     }
-    void Update()
+    void FixedUpdate()
     {
         if (jumpPressed && velocity.y < maxForce && canJump) {
             velocity.y += jumpForce * Time.deltaTime;                 
