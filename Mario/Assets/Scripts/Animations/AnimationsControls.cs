@@ -28,8 +28,6 @@ public class AnimationsControls : MonoBehaviour
             animator.SetTrigger("Walking");
             Debug.Log("Walk Animation");
         }
-        //moveinput.x = ctx.ReadValue<Vector2>().x;
-        //moveinput.y = ctx.ReadValue<Vector2>().y;
 
         if (ctx.action.phase == InputActionPhase.Canceled)
         {
@@ -53,17 +51,16 @@ public class AnimationsControls : MonoBehaviour
     }
 
 
-    /*public void SprintInput(InputAction.CallbackContext ctx)
+    public void SprintInput(InputAction.CallbackContext ctx)
     {
         if (ctx.action.phase == InputActionPhase.Performed)
         {
-            animator.SetTrigger("Walking");
-            Debug.Log("jdagwhidb");
+            animator.speed = 7;
         }
         if (ctx.action.phase == InputActionPhase.Canceled)
         {
-            speed = walkSpeed;
+            animator.speed = 4;
         }
-    }*/
+    }
 
 }
