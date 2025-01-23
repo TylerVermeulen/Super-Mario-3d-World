@@ -40,24 +40,15 @@ public class Movement : MonoBehaviour
         if (moveinput != Vector2.zero)
         {
             Vector3 moveDirection = new Vector3(moveinput.x, 0, moveinput.y);
-
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
-
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
     }
     public void MoveCharacter()
     {
-        //float holdY = Velocity.y;
         float moveSpeed = speed * moveinput.magnitude;
         velocity = transform.forward * moveSpeed * Time.deltaTime;
-
-       // Debug.Log("vel" + velocity);
-        //velocity.y = Physics.gravity.y;
-        controller.Move(velocity * Time.deltaTime);
-       // velocity.y = holdY;
-
-       
+        controller.Move(velocity * Time.deltaTime); 
     }
 
     public void MoveInput(InputAction.CallbackContext ctx)
