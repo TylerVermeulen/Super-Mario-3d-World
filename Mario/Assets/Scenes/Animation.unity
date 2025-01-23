@@ -184,6 +184,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 40f92419889c45141b133bd5d5a80ab0, type: 3}
   m_PrefabInstance: {fileID: 1361809005}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &623304694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623304693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6788540390036c241935fb6a55cbbe19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 10
+  jump: 500
 --- !u!54 &623304697
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -211,165 +225,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &623304698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623304693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e21226f23baca7c4e9ed68992ca8bc2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 336.2
-  walkSpeed: 443.6
-  speed: 39.19
-  sprintSpeed: 35.18
---- !u!114 &623304699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623304693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 2007b124e7993af4f9fcfa370ff84b2a, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 623304698}
-        m_TargetAssemblyTypeName: Moving, Assembly-CSharp
-        m_MethodName: MoveInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 623304700}
-        m_TargetAssemblyTypeName: AnimationsControls, Assembly-CSharp
-        m_MethodName: MoveInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 935dd803-e5b3-41ed-a864-c1ae3e255cdc
-    m_ActionName: Movement/movement[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 623304701}
-        m_TargetAssemblyTypeName: Jump, Assembly-CSharp
-        m_MethodName: JumpInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 060aa298-dfcb-4905-a6f2-da540266997c
-    m_ActionName: Movement/Jump[/XInputControllerWindows/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 584c3416-d4db-4fb9-927e-ab93bf47ab61
-    m_ActionName: Movement/Attack[/XInputControllerWindows/buttonWest]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ab61146c-fe08-4cd7-9718-6b7f7b1788d2
-    m_ActionName: Movement/Groundpound[/XInputControllerWindows/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3d27ed56-de6e-4241-a56d-7593e7fcedb8
-    m_ActionName: Movement/Sprinting[/XInputControllerWindows/buttonSouth]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Movement
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &623304700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623304693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c22ac9015c4b5e64d86a6e5152c760b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 90.27
-  speed: 56.05
-  sprintSpeed: 56.29
---- !u!114 &623304701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623304693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed78ea4485dc1684084be0d46343d80c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallingSpeed: 0.09
-  jumpForce: 1.04
-  maxForce: 3.15
-  buttonTime: 0.3
---- !u!143 &623304704
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623304693}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1070484699
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,22 +485,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40f92419889c45141b133bd5d5a80ab0, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 623304694}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40f92419889c45141b133bd5d5a80ab0, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 623304697}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40f92419889c45141b133bd5d5a80ab0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 623304698}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40f92419889c45141b133bd5d5a80ab0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 623304701}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40f92419889c45141b133bd5d5a80ab0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 623304700}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40f92419889c45141b133bd5d5a80ab0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 623304699}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40f92419889c45141b133bd5d5a80ab0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 623304704}
   m_SourcePrefab: {fileID: 100100000, guid: 40f92419889c45141b133bd5d5a80ab0, type: 3}
 --- !u!1 &1544160352
 GameObject:
