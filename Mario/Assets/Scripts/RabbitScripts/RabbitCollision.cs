@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class RabbitCollision : MonoBehaviour
 {
     [SerializeField] private GameObject star;
+    private Animator animator;
+    private Vector3 location;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        location = new Vector3(13.75f, 12.62f, -80.72f);
     }
 
     // Update is called once per frame
@@ -20,13 +24,16 @@ public class RabbitCollision : MonoBehaviour
     {
         if(other.transform.tag == "Player")
         {
-            SpawnStar();
+            animator.SetTrigger("Touched");
+            StartCoroutine(SpawnStar());
         }
     }
-    private void SpawnStar()
+    private IEnumerator SpawnStar()
     {
-        Instantiate(star, this.transform.position, Quaternion.identity);
-        Debug.Log("Play animation here");
-        Destroy(this.gameObject);
+        
+        yield return new WaitForSeconds(2);
+        Instantiate(star, location, Quaternion.Euler(0, -90, 0));
+        Destroy(animator.gameObject);
     }
+
 }

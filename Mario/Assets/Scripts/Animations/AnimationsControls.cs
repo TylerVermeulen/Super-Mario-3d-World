@@ -51,16 +51,16 @@ public class AnimationsControls : MonoBehaviour
     }
 
 
-    public void SprintInput(InputAction.CallbackContext ctx)
-    {
-        if (ctx.action.phase == InputActionPhase.Performed)
-        {
-            animator.speed = 7;
-        }
-        if (ctx.action.phase == InputActionPhase.Canceled)
-        {
-            animator.speed = 4;
-        }
-    }
+    //public void SprintInput(InputAction.CallbackContext ctx)
+    //{
+    //    if (ctx.action.phase == InputActionPhase.Performed)
+    //    {
+    //        animator.speed = 7;
+    //    }
+    //    if (ctx.action.phase == InputActionPhase.Canceled)
+    //    {
+    //        animator.speed = 4;
+    //    }
+    //}
 
 }
