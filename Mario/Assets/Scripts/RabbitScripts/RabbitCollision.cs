@@ -7,33 +7,33 @@ public class RabbitCollision : MonoBehaviour
 {
     [SerializeField] private GameObject star;
     private Animator animator;
-    private Vector3 location;
+    private bool spawnin;
     // Start is called before the first frame update
     void Start()
     {
+        spawnin = false;
+        star.SetActive(false);
         animator = GetComponent<Animator>();
-        location = new Vector3(13.75f, 12.62f, -80.72f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.transform.tag == "Player")
         {
             animator.SetTrigger("Touched");
+            star.SetActive(true);
             StartCoroutine(SpawnStar());
         }
     }
     private IEnumerator SpawnStar()
     {
-        
         yield return new WaitForSeconds(2);
-        Instantiate(star, location, Quaternion.Euler(0, -90, 0));
-        Destroy(animator.gameObject);
+        
+        Destroy(gameObject);
     }
 
 }

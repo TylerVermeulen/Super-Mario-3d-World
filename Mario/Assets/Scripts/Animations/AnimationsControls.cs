@@ -26,7 +26,7 @@ public class AnimationsControls : MonoBehaviour
         if (ctx.action.phase == InputActionPhase.Performed)
         {
             animator.SetTrigger("Walking");
-            Debug.Log("Walk Animation");
+            
         }
 
         if (ctx.action.phase == InputActionPhase.Canceled)
@@ -41,7 +41,7 @@ public class AnimationsControls : MonoBehaviour
         if (ctx.action.phase == InputActionPhase.Started)
         {
             animator.SetTrigger("Jumping");
-            Debug.Log("jump big boi");
+            
         }
         if (ctx.action.phase == InputActionPhase.Canceled)
         {

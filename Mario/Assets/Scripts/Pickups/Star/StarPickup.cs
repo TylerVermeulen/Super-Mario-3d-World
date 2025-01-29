@@ -31,7 +31,7 @@ public class StarPickup : MonoBehaviour
             Score.updateScore += starScore;
             score.HandleScore();
         }
-        Debug.Log("Star");
+        
     }
     
 }
