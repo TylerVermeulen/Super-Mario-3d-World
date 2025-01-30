@@ -11,28 +11,24 @@ public class RabbitCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnin = false;
         star.SetActive(false);
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.transform.tag == "Player")
         {
             animator.SetTrigger("Touched");
-            star.SetActive(true);
+            
             StartCoroutine(SpawnStar());
+
         }
     }
     private IEnumerator SpawnStar()
     {
         yield return new WaitForSeconds(2);
-        
+        star.SetActive(true);
         Destroy(gameObject);
     }
 
